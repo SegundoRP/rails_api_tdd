@@ -40,3 +40,5 @@ touch Dockerfile
 mkdir entrypoints
 touch entrypoints/docker-entrypoint.sh
 chmod +x entrypoints/docker-entrypoint.sh
+
+docker exec -it rails_api_tdd_store_api_1 bash
