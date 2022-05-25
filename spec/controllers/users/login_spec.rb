@@ -16,9 +16,13 @@ RSpec.describe V1::UsersController, type: :controller do
         subject { response }
         it { is_expected.to have_http_status(:ok) }
       end
-      context 'Respuesta de login correcta' do
+      context 'Estructura de respuesta login correcta' do
         subject { payload_test }
-        it { is_expected.to include(:id, :email, :age, :store) }
+        it { is_expected.to include(:id, :email, :age, :store, :token) }
+      end
+      context 'Estructura de respuesta de token correcta' do
+        subject { payload_test[:token] }
+        it { is_expected.to include(:id, :token, :expires_at) }
       end
     end
     context 'Inicio de sesion fallido' do
