@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :token do
-    token { "MyString" }
+    token { SecureRandom.hex }
     expires_at { Faker::Date.in_date_period }
   end
 end
