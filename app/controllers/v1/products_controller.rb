@@ -34,7 +34,10 @@ module V1
     end
 
     def restore
-
+      @product = @store.products.only_deleted.find_by(id: params[:product_id])
+      head :not_found unless @product
+      Product.restore @product.id
+      render :show, status: :ok
     end
 
     private
