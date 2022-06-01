@@ -33,6 +33,10 @@ module V1
       head :ok
     end
 
+    def restore
+
+    end
+
     private
 
     def product_params
